@@ -26,8 +26,6 @@
 <img src="./sample_imgs/project_vid.gif">
 </p>!
 
-[Final Result Gif](./sample_imgs/project_vid.gif)
-
 ## Udacity Self Driving Car Engineer Nanodegree - Project 4
 
 The goal of this project is to develop a pipeline to process a video stream from a forward-facing camera mounted on the front of a car, and output an annotated video which identifies:
