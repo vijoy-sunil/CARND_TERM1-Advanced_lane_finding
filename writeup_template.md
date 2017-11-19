@@ -25,19 +25,30 @@
 The goal of this project is to develop a pipeline to process a video stream from a forward-facing camera mounted on the front of a car, and output an annotated video which identifies:
 
 1.The positions of the lane lines
+
 2.The location of the vehicle relative to the center of the lane
+
 3.The radius of curvature of the road
+
 4.The pipeline created for this project processes images in the following steps:
 
 ### Steps
 Step 1: Compute the camera calibration matrix and distortion coefficients given a set of chessboard images.
+
 Step 2: Apply a distortion correction to raw images.
+
 Step 3: Use color transforms, gradients, etc., to create a thresholded binary image.
+
 Step 4: Apply a perspective transform to rectify binary image ("birds-eye view").
+
 Step 5: Detect lane pixels and fit to find the lane boundary.
+
 Step 6: Determine the curvature of the lane and vehicle position with respect to center.
+
 Step 7: Warp the detected lane boundaries back onto the original image.
+
 Step 8: Output visual display of the lane boundaries and numerical estimation of lane curvature and vehicle position.
+
 
 ### Pipeline description
 Step 1: Camera Calibration
