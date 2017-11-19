@@ -107,7 +107,7 @@ Step 7: Unwarp the image back to its original perspective and  Display the lane 
 
 The final step in processing the images was to plot the polynomials on to the warped image, fill the space between the polynomials to highlight the lane that the car is in, use another perspective trasformation to unwarp the image from birds eye back to its original perspective, and print the distance from center and radius of curvature on to the final annotated image.
 
-![alt text][image12]
+![alt text][image1]
 
 ### Pipeline (video)
 
