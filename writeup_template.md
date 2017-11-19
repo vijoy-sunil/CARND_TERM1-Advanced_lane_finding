@@ -9,7 +9,6 @@
 [image7]: ./output_images/undistort_chessboard.png "Undistorted chessboard image"
 [image8]: ./output_images/undistorted_src_img.png "Undistorted image"
 [image9]: ./output_images/warped_img.png "Perspective transform"
-[image10]: ./output_images/windows_lane.png "Window search"
 
 [image11]: ./test_images/test3.jpg "Source frame"
 [video1]: ./project_video.mp4 "Video"
