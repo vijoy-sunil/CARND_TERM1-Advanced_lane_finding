@@ -104,8 +104,8 @@ def find_curvature(ploty, leftx, rightx, lefty, righty):
     left_fit_cr = np.polyfit(lefty*ym_per_pix, leftx*xm_per_pix, 2)
     right_fit_cr = np.polyfit(righty*ym_per_pix, rightx*xm_per_pix, 2)
 
-    left_curverad = ((1 + (2*left_fit_cr[0]*y_eval*ym_per_pix + left_fit_cr[1])**2)**1.5) / np.absolute(2*left_fit_cr[0])
-    right_curverad = ((1 + (2*right_fit_cr[0]*y_eval*ym_per_pix + right_fit_cr[1])**2)**1.5) / np.absolute(2*right_fit_cr[0])
+    left_curverad = ((1 + (2*left_fit_cr[0]*y_eval*ym_per_pix + left_fit_cr[1])* *2)* *1.5) / np.absolute(2*left_fit_cr[0]) 
+    right_curverad = ((1 + (2*right_fit_cr[0]*y_eval*ym_per_pix + right_fit_cr[1])* *2)* *1.5) / np.absolute(2*right_fit_cr[0])
 
     rad = (left_curverad + right_curverad)/2
     return left_curverad, right_curverad, rad
@@ -119,8 +119,8 @@ def dist_center(img, left_fit, right_fit, binary):
     if left_fit is not None and right_fit is not None:
         car_pos = binary.shape[1]/2
         h = binary.shape[0]
-        left_fit_x_int = left_fit[0]*h**2 + left_fit[1]*h + left_fit[2]
-        right_fit_x_int = right_fit[0]*h**2 + right_fit[1]*h + right_fit[2]
+        left_fit_x_int = left_fit[0]*h* *2 + left_fit[1]*h + left_fit[2]
+        right_fit_x_int = right_fit[0]*h* *2 + right_fit[1]*h + right_fit[2]
         lane_center_position = (left_fit_x_int + right_fit_x_int) /2
         center_dist = (car_pos - lane_center_position) * xm_per_pix
     return center_dist
