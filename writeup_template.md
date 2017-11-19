@@ -11,7 +11,7 @@
 [image9]: ./output_images/warped_img.png "Perspective transform"
 [image10]: ./output_images/windows_lane.png "Window search"
 
-[image11]: ./test_images/test5.jpg "Source frame"
+[image11]: ./test_images/test3.jpg "Source frame"
 [video1]: ./project_video.mp4 "Video"
 
 ## Advanced Lane Finding
@@ -106,6 +106,8 @@ The car position is the difference between these intercept points and the image 
 Step 7: Unwarp the image back to its original perspective and  Display the lane curvature and vehicle position on the final image
 
 The final step in processing the images was to plot the polynomials on to the warped image, fill the space between the polynomials to highlight the lane that the car is in, use another perspective trasformation to unwarp the image from birds eye back to its original perspective, and print the distance from center and radius of curvature on to the final annotated image.
+
+![alt text][image1]
 
 ### Pipeline (video)
 
