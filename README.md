@@ -1,10 +1,11 @@
 ## Advanced Lane Finding
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
+<p align="center"> 
+<img src="./sample_imgs/project_vid.gif" width = "720">
+</p>
 
- 
-
-The Project
+### The Project
 ---
 
 The goals / steps of this project are the following:
@@ -22,11 +23,10 @@ The goals / steps of this project are the following:
 The images for camera calibration are stored in the folder called `camera_cal`.  The images in `test_images` are for testing your pipeline on single frames. 'output_images' folder contains output images from different stages of pipeline
 
 single_frame_lanedetection.ipynb - contains the tested pipeline for images in the 'output_images' folder
-video_lanedetection.ipynb - contains the pipeline used to run on video
+video_lanedetection.ipynb        - contains the pipeline used to run on video
 
-Ouput videos
+### Ouput videos
 project_video_output.mp4
 project_video_output_diag.mp4
-
 challenge_video_output.mp4
 challenge_video_output_diag.mp4
