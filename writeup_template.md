@@ -75,7 +75,7 @@ Step 3: Perspective Transform
 In this step, the undistorted image is transformed to a "birds eye view" of the road which focuses only on the lane lines and displays them in such a way that they appear to be relatively parallel to eachother (as opposed to the converging lines you would normally see).
 To achieve the perspective transformation I first applied the OpenCV functions getPerspectiveTransform and warpPerspective which take a matrix of four source points on the undistorted image and remaps them to four destination points on the warped image. The source and destination points were selected manually by visualizing the locations of the lane lines on a series of test images.
 
-The source and destination warp points are shown below:
+The source warp points are shown below:
 
 | Source        | 
 |:-------------:| 
@@ -178,7 +178,7 @@ The video pipeline first checks whether or not the lane was detected in the prev
 
 If at any time, the pipeline fails to detect lane pixels based on the the previous frame, it will go back in to blind search mode and scan the entire binary image for nonzero pixels to represent the lanes.
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_video_output.mp4)
 
 
 ---
