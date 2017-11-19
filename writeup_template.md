@@ -9,8 +9,9 @@
 [image7]: ./output_images/undistort_chessboard.png "Undistorted chessboard image"
 [image8]: ./output_images/undistorted_src_img.png "Undistorted image"
 [image9]: ./output_images/warped_img.png "Perspective transform"
-
-[image11]: ./test_images/test3.jpg "Source frame"
+[image10]: ./output_images/find_curvature.PNG.jpg "Find curvature"
+[image11]: ./output_images/vehicle_pos.PNG "Vehicle position"
+[image12]: ./test_images/test3.jpg "Source frame"
 [video1]: ./project_video.mp4 "Video"
 
 ## Advanced Lane Finding
@@ -94,11 +95,11 @@ Step 6: Calculate radius of curvature and vehicle position from center
 
 I used the following code to calculate the radius of curvature for each lane line in meters and the final radius of curvature was taken by average the left and right curve radiuses.
 
-![alt text][image2]
+![alt text][image10]
 
 The position of the vehicle with respect to the center of the lane is calculated with the following lines of code:
 
-![alt text][image2]
+![alt text][image11]
 
 The car position is the difference between these intercept points and the image midpoint (assuming that the camera is mounted at the center of the vehicle).
  
@@ -106,7 +107,7 @@ Step 7: Unwarp the image back to its original perspective and  Display the lane 
 
 The final step in processing the images was to plot the polynomials on to the warped image, fill the space between the polynomials to highlight the lane that the car is in, use another perspective trasformation to unwarp the image from birds eye back to its original perspective, and print the distance from center and radius of curvature on to the final annotated image.
 
-![alt text][image1]
+![alt text][image12]
 
 ### Pipeline (video)
 
