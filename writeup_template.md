@@ -109,7 +109,7 @@ I used the following code to calculate the radius of curvature for each lane lin
 
     rad = (left_curverad + right_curverad)/2
     return left_curverad, right_curverad, rad
-''' 
+
 
 The position of the vehicle with respect to the center of the lane is calculated with the following lines of code:
 
@@ -124,7 +124,7 @@ The position of the vehicle with respect to the center of the lane is calculated
         lane_center_position = (left_fit_x_int + right_fit_x_int) /2
         center_dist = (car_pos - lane_center_position) * xm_per_pix
     return center_dist
-'''
+
 
 The car position is the difference between these intercept points and the image midpoint (assuming that the camera is mounted at the center of the vehicle).
  
