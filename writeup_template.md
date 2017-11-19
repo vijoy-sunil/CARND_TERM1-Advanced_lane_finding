@@ -101,16 +101,13 @@ def find_curvature(ploty, leftx, rightx, lefty, righty):
     xm_per_pix = 3.7/600
     y_eval = np.max(ploty)
     
-# Fit new polynomials to x,y in world space
     left_fit_cr = np.polyfit(lefty*ym_per_pix, leftx*xm_per_pix, 2)
     right_fit_cr = np.polyfit(righty*ym_per_pix, rightx*xm_per_pix, 2)
 
-# Calculate the new radii of curvature
     left_curverad = ((1 + (2*left_fit_cr[0]*y_eval*ym_per_pix + left_fit_cr[1])**2)**1.5) / np.absolute(2*left_fit_cr[0])
     right_curverad = ((1 + (2*right_fit_cr[0]*y_eval*ym_per_pix + right_fit_cr[1])**2)**1.5) / np.absolute(2*right_fit_cr[0])
 
     rad = (left_curverad + right_curverad)/2
-# return radius of curvature is in meters
     return left_curverad, right_curverad, rad
 '''
 
@@ -118,8 +115,7 @@ The position of the vehicle with respect to the center of the lane is calculated
 
 '''
 def dist_center(img, left_fit, right_fit, binary):
-    xm_per_pix = 3.7/780
-# Distance from center is image x midpoint - mean of l_fit and r_fit intercepts 
+    xm_per_pix = 3.7/780 
     if left_fit is not None and right_fit is not None:
         car_pos = binary.shape[1]/2
         h = binary.shape[0]
