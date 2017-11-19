@@ -24,7 +24,7 @@
 
 <p align="center"> 
 <img src="./sample_imgs/project_vid.gif">
-</p>!
+</p>
 
 ## Udacity Self Driving Car Engineer Nanodegree - Project 4
 
