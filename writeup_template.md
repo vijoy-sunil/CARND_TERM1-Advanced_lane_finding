@@ -60,12 +60,12 @@ To achieve the perspective transformation I first applied the OpenCV functions g
 
 The source and destination warp points are shown below:
 
-| Source        | Destination   | 
-|:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
+| Source        | 
+|:-------------:| 
+| 192, 720      | 
+| 589, 457      |
+| 698, 457     | 
+| 1145, 720      |
 
 ![alt text][image6]
 
@@ -95,11 +95,40 @@ Step 6: Calculate radius of curvature and vehicle position from center
 
 I used the following code to calculate the radius of curvature for each lane line in meters and the final radius of curvature was taken by average the left and right curve radiuses.
 
-![alt text][image10]
+'''
+def find_curvature(ploty, leftx, rightx, lefty, righty):
+    ym_per_pix = 30/720
+    xm_per_pix = 3.7/600
+    y_eval = np.max(ploty)
+    
+# Fit new polynomials to x,y in world space
+    left_fit_cr = np.polyfit(lefty*ym_per_pix, leftx*xm_per_pix, 2)
+    right_fit_cr = np.polyfit(righty*ym_per_pix, rightx*xm_per_pix, 2)
+
+# Calculate the new radii of curvature
+    left_curverad = ((1 + (2*left_fit_cr[0]*y_eval*ym_per_pix + left_fit_cr[1])**2)**1.5) / np.absolute(2*left_fit_cr[0])
+    right_curverad = ((1 + (2*right_fit_cr[0]*y_eval*ym_per_pix + right_fit_cr[1])**2)**1.5) / np.absolute(2*right_fit_cr[0])
+
+    rad = (left_curverad + right_curverad)/2
+# return radius of curvature is in meters
+    return left_curverad, right_curverad, rad
+'''
 
 The position of the vehicle with respect to the center of the lane is calculated with the following lines of code:
 
-![alt text][image11]
+'''
+def dist_center(img, left_fit, right_fit, binary):
+    xm_per_pix = 3.7/780
+# Distance from center is image x midpoint - mean of l_fit and r_fit intercepts 
+    if left_fit is not None and right_fit is not None:
+        car_pos = binary.shape[1]/2
+        h = binary.shape[0]
+        left_fit_x_int = left_fit[0]*h**2 + left_fit[1]*h + left_fit[2]
+        right_fit_x_int = right_fit[0]*h**2 + right_fit[1]*h + right_fit[2]
+        lane_center_position = (left_fit_x_int + right_fit_x_int) /2
+        center_dist = (car_pos - lane_center_position) * xm_per_pix
+    return center_dist
+'''
 
 The car position is the difference between these intercept points and the image midpoint (assuming that the camera is mounted at the center of the vehicle).
  
@@ -120,9 +149,6 @@ Here's a [link to my video result](./project_video.mp4)
 
 ---
 ### Possible Limitations
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-
-
 
 The video pipeline developed in this project did a fairly robust job of detecting the lane lines in the test video provided for the project, which shows a road in basically ideal conditions, with fairly distinct lane lines, and on a clear day. It also did a decent job with the challenge video, although it did lose the lane lines momentarily when there was heavy shadow over the road from an overpass.
 
