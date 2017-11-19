@@ -9,7 +9,7 @@
 [image7]: ./output_images/undistort_chessboard.png "Undistorted chessboard image"
 [image8]: ./output_images/undistorted_src_img.png "Undistorted image"
 [image9]: ./output_images/warped_img.png "Perspective transform"
-[image10]: ./output_images/find_curvature.PNG.jpg "Find curvature"
+[image10]: ./output_images/find_curvature.PNG "Find curvature"
 [image11]: ./output_images/vehicle_pos.PNG "Vehicle position"
 [image12]: ./test_images/test3.jpg "Source frame"
 [video1]: ./project_video.mp4 "Video"
@@ -50,7 +50,7 @@ Step 2: Distortion Correction
 
 The camera calibration matrix and distortion coefficients obtained from the above step were used with the OpenCV function undistort() to remove distortion from highway driving images.
 
-![alt text][image11]
+![alt text][image12]
 ![alt text][image8]
 
 Step 3: Perspective Transform
