@@ -198,6 +198,6 @@ What I have learned from this project is that it is relatively easy to finetune 
 Project video - diagnostic version
 [link to my video result](./project_video_output_diag.mp4)
 
-Challenge video - diagnostic version
-[link to my video result](./challenge_video_output_diag.mp4)
-
+<p align="center"> 
+<img src="./sample_imgs/project_vid_diag.gif" width = "720">
+</p>
