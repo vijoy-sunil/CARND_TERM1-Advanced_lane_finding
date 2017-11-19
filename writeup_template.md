@@ -95,7 +95,7 @@ Step 6: Calculate radius of curvature and vehicle position from center
 
 I used the following code to calculate the radius of curvature for each lane line in meters and the final radius of curvature was taken by average the left and right curve radiuses.
 
-'''
+
 
     ym_per_pix = 30/720
     xm_per_pix = 3.7/600
@@ -113,7 +113,7 @@ I used the following code to calculate the radius of curvature for each lane lin
 
 The position of the vehicle with respect to the center of the lane is calculated with the following lines of code:
 
-'''
+
 
     xm_per_pix = 3.7/780 
     if left_fit is not None and right_fit is not None:
