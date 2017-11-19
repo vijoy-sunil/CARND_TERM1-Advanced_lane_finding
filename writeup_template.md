@@ -23,7 +23,7 @@
 ## Advanced Lane Finding
 
 <p align="center"> 
-<img src="./sample_imgs/project_vid.gif">
+<img src="./sample_imgs/project_vid.gif" width = "480">
 </p>
 
 ## Udacity Self Driving Car Engineer Nanodegree - Project 4
