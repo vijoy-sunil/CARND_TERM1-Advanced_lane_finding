@@ -190,7 +190,7 @@ Here's a [link to my video result](./project_video_output.mp4)
 ---
 ### Possible Limitations
 
-The video pipeline developed in this project did a fairly robust job of detecting the lane lines in the test video provided for the project, which shows a road in basically ideal conditions, with fairly distinct lane lines, and on a clear day. It also did a decent job with the challenge video, although it did lose the lane lines momentarily when there was heavy shadow over the road from an overpass.
+The video pipeline developed in this project did a fairly robust job of detecting the lane lines in the test video provided for the project, which shows a road in basically ideal conditions, with fairly distinct lane lines, and on a clear day. I tried the same pipeline on the challenge video, but it did not do a decent job. It did lose the lane lines from time to time and detected wrong lines on the road when there was heavy shadow rom an overpass.
 
 What I have learned from this project is that it is relatively easy to finetune a software pipeline to work well for consistent road and weather conditions, but what is challenging is finding a single combination which produces the same quality result in any condition.
 
